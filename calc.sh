@@ -9,9 +9,9 @@ while true;do
   # Subtract
   # Exit
  echo "Please make a selection:"
- echo "Add"
- echo "Subtract"
- echo "Exit"
+ echo "[1] Add"
+ echo "[2] Subtract"
+ echo "[0] Exit"
 
  # Then, capture the user selection.
  read selection
@@ -20,7 +20,7 @@ while true;do
 
  # If the selection matches a supported operation, execute the operation.
  case $selection in
- "Add")
+ '1' | "add"|"Add")
 	echo "Please provide the first number:"
 	read first_number
 	echo "Please provide second the second number: "
@@ -29,7 +29,7 @@ while true;do
 	expr $first_number + $second_number
 
 	;;
- "Subtract")
+ "2"| "subtract" |"Subtract")
 	echo "Please provide the first number "
 	read first_number
 	echo "Please provide the second number:"
@@ -37,7 +37,7 @@ while true;do
 	echo "The difference of $first_number and $second_number is: "
 	expr $first_number - $second_number
 	;;
- "Exit")
+ "0"| "exit"|"Exit")
         echo "Come again soon, Goodbye!"
 	exit 0 
        ;;
